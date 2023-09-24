@@ -15,8 +15,11 @@ SIP https://github.com/containerd/containerd/discussions/5525#discussioncomment-
 
 [source,shell]
 ----
+# Install packages
 brew install --cask macfuse
 brew install docker docker-buildx macOScontainers/formula/bindfs macOScontainers/formula/containerd macOScontainers/formula/dockerd macOScontainers/formula/rund
+
+# Set up service configs
 sudo mkdir /etc/docker
 sudo bash -c "cat > /etc/docker/daemon.json" << EOF
 {
@@ -29,8 +32,12 @@ sudo bash -c "cat > /etc/docker/daemon.json" << EOF
   }
 }
 EOF
+
+# Start services
 sudo brew services start containerd
 sudo brew services start dockerd
+
+# Enable BuildKit support
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
 ----
