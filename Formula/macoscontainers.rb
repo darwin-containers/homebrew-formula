@@ -7,5 +7,5 @@ class MacosContainers < Formula
   depends_on "macOScontainers/formula/rund"
 
   # Not actually needed for Docker
-  # depends_on "macOScontainers/homebrew/buildkitd"
+  # depends_on "macOScontainers/formula/buildkitd"
 end
