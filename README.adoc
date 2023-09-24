@@ -6,7 +6,7 @@
 [source,shell]
 ----
 brew install --cask macfuse
-brew install macOScontainers/formula/macoscontainers
+brew install docker docker-buildx macOScontainers/formula/bindfs macOScontainers/formula/containerd macOScontainers/formula/dockerd macOScontainers/formula/rund
 sudo mkdir /etc/docker
 sudo bash -c "cat > /etc/docker/daemon.json" << EOF
 {
