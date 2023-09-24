@@ -1,0 +1,37 @@
+= macOS _native_ containers
+
+== Installation
+:source-highlighter: rouge
+
+[source,shell]
+----
+brew install --cask macfuse
+brew install macOScontainers/macos-containers
+sudo mkdir /etc/docker
+sudo bash -c "cat > /etc/docker/daemon.json" << EOF
+{
+  "data-root": "/private/d/",
+  "default-runtime": "io.containerd.rund.v1",
+  "runtimes": {
+    "io.containerd.rund.v1": {
+      "runtimeType": "io.containerd.rund.v1"
+    }
+  }
+}
+EOF
+sudo brew services start containerd
+sudo brew services start dockerd
+mkdir -p ~/.docker/cli-plugins
+ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+----
+
+== Usage
+
+First, authenticate to GitHub Container Registry: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry
+
+Then, run your first macOS container:
+
+[source,shell]
+----
+sudo docker run --rm -it ghcr.io/macoscontainers/macos-jail/ventura:latest echo "Hello from macOS container ^_^"
+----
