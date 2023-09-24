@@ -35,7 +35,7 @@ ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/
 
 == Usage
 
-First, authenticate to GitHub Container Registry: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry
+Authenticate to GitHub Container Registry using https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry[instructions].
 
 Then, run your first macOS container:
 
