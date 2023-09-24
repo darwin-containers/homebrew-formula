@@ -1,7 +1,15 @@
 = macOS _native_ containers
+:source-highlighter: rouge
+
+WARNING: This software is _very_ alpha.
+Use at your own risk.
 
 == Installation
-:source-highlighter: rouge
+
+Prerequisites:
+
+- macOS Catalina or newer
+- https://brew.sh[Homebrew]
 
 [source,shell]
 ----
