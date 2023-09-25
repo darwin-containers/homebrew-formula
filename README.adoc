@@ -46,6 +46,11 @@ ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/
 
 Authenticate to GitHub Container Registry using https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry[instructions].
 
+[source,shell]
+----
+echo <YOUR_ACCESS_TOKEN> | docker login ghcr.io -u <GITHUB_USERNAME> --password-stdin
+----
+
 Then, run your first macOS container:
 
 [source,shell]
