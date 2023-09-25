@@ -14,6 +14,7 @@ class Dockerd < Formula
       {
         "data-root": "/private/d/",
         "default-runtime": "io.containerd.rund.v1",
+        "group": "staff",
         "runtimes": {
           "io.containerd.rund.v1": {
             "runtimeType": "io.containerd.rund.v1"
@@ -28,7 +29,7 @@ class Dockerd < Formula
   end
 
   service do
-    run [bin/"dockerd", "--config-file", etc/"docker/daemon.json", "--group", "staff"]
+    run [bin/"dockerd", "--config-file", etc/"docker/daemon.json"]
     require_root true
     keep_alive always: true
     environment_variables PATH: std_service_path_env
