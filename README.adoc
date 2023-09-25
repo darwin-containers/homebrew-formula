@@ -36,5 +36,5 @@ Then, run your first macOS container:
 
 [source,shell]
 ----
-sudo docker run --rm -it ghcr.io/macoscontainers/macos-jail/ventura:latest echo "Hello from macOS container ^_^"
+docker run --rm -it ghcr.io/macoscontainers/macos-jail/ventura:latest echo "Hello from macOS container ^_^"
 ----

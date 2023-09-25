@@ -28,7 +28,7 @@ class Dockerd < Formula
   end
 
   service do
-    run [bin/"dockerd", "--config-file", etc/"docker/daemon.json"]
+    run [bin/"dockerd", "--config-file", etc/"docker/daemon.json", "--group", "staff"]
     require_root true
     keep_alive always: true
     environment_variables PATH: std_service_path_env
