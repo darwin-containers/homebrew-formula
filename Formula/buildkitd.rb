@@ -7,27 +7,28 @@ class Buildkitd < Formula
 
   def install
     system "go", "build", "-o", "bin/", "./cmd..."
+
+    (buildpath/"buildkitd.toml").write <<~EOS
+      [worker.containerd]
+      runtime = "io.containerd.rund.v1"
+    EOS
+
     bin.install "bin/buildkitd" => "buildkitd"
     bin.install "bin/buildctl" => "buildctl"
+    (etc/"buildkit").mkpath
+    etc.install buildpath/"buildkitd.toml" => "buildkit/buildkitd.toml"
   end
 
   service do
-    run [bin/"buildkitd"]
+    run [bin/"buildkitd", "--config", etc/"buildkit/buildkitd.toml"]
     require_root true
     keep_alive always: true
-    working_dir HOMEBREW_PREFIX
     environment_variables PATH: std_service_path_env
   end
 
   def caveats
     <<~EOS
-      Enable macOS containers support by creating /etc/buildkit/buildkitd.toml:
-
-      [worker.containerd]
-      runtime = "io.containerd.rund.v1"
-
-      Then, start BuildKit daemon with:
-
+      Start BuildKit daemon with:
       sudo brew services start buildkitd
     EOS
   end

@@ -9,21 +9,8 @@ class Dockerd < Formula
     system "cp", "vendor.mod", "go.mod"
     system "cp", "vendor.sum", "go.sum"
     system "go", "build", "-o", "bin/", "./cmd/dockerd"
-    bin.install "bin/dockerd" => "dockerd"
-  end
 
-  service do
-    run [bin/"dockerd"]
-    require_root true
-    keep_alive always: true
-    working_dir HOMEBREW_PREFIX
-    environment_variables PATH: std_service_path_env
-  end
-
-  def caveats
-    <<~EOS
-      Enable macOS containers support by creating /etc/docker/daemon.json with the following contents:
-  
+    (buildpath/"daemon.json").write <<~EOS
       {
         "data-root": "/private/d/",
         "default-runtime": "io.containerd.rund.v1",
@@ -33,8 +20,23 @@ class Dockerd < Formula
           }
         }
       }
+    EOS
 
-      Then, start docker daemon with:
+    (etc/"docker").mkpath
+    etc.install buildpath/"daemon.json" => "docker/daemon.json"
+    bin.install "bin/dockerd" => "dockerd"
+  end
+
+  service do
+    run [bin/"dockerd", "--config-file", etc/"docker/daemon.json"]
+    require_root true
+    keep_alive always: true
+    environment_variables PATH: std_service_path_env
+  end
+
+  def caveats
+    <<~EOS
+      Start docker daemon with:
       sudo brew services start dockerd
 
       Enable BuildKit support with:

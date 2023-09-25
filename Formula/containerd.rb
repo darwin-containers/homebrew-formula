@@ -15,7 +15,6 @@ class Containerd < Formula
     run [bin/"containerd"]
     require_root true
     keep_alive always: true
-    working_dir HOMEBREW_PREFIX
     environment_variables PATH: std_service_path_env
   end
 
