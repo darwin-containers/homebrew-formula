@@ -36,11 +36,8 @@ class Dockerd < Formula
 
   def caveats
     <<~EOS
-      Start docker daemon with:
+      Start Docker service with:
       sudo brew services start dockerd
-
-      Enable BuildKit support with:
-      mkdir -p ~/.docker/cli-plugins; ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
     EOS
   end
 end

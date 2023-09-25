@@ -28,7 +28,7 @@ class Buildkitd < Formula
 
   def caveats
     <<~EOS
-      Start BuildKit daemon with:
+      Start BuildKit service with:
       sudo brew services start buildkitd
     EOS
   end

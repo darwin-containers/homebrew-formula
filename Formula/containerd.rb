@@ -20,7 +20,7 @@ class Containerd < Formula
 
   def caveats
     <<~EOS
-      Start containerd daemon with:
+      Start containerd service with:
       sudo brew services start containerd
     EOS
   end
