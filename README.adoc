@@ -43,3 +43,8 @@ Then, run your first macOS container:
 ----
 docker run --rm -it ghcr.io/macoscontainers/macos-jail/ventura:latest echo "Hello from macOS container ^_^"
 ----
+
+== How does it work?
+
+See https://github.com/macOScontainers/rund#rund[rund] repository for under-the-hood machinery.
+
