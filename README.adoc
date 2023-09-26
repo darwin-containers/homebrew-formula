@@ -13,6 +13,8 @@ Prerequisites:
 SIP https://github.com/containerd/containerd/discussions/5525#discussioncomment-2685649[doesn't allow] to `chroot`.
 - https://brew.sh[Homebrew]
 
+// TODO: Suggest fuse-t as an alternative to macfuse
+
 [source,shell]
 ----
 # Install packages
