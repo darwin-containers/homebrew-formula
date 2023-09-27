@@ -1,7 +1,7 @@
 class Rund < Formula
   version "0.0.3"
   url "https://github.com/macOScontainers/rund/archive/refs/tags/#{version}.zip"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "8e21ba3bc071442e09fc56a6bcc5ed9d10b8f139590fd8866033950cc39fbeed"
 
   depends_on "go" => :build
 
