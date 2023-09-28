@@ -19,7 +19,7 @@ SIP https://github.com/containerd/containerd/discussions/5525#discussioncomment-
 ----
 # Install packages
 brew install --cask macfuse
-brew install docker docker-buildx macOScontainers/formula/bindfs macOScontainers/formula/containerd macOScontainers/formula/dockerd macOScontainers/formula/rund
+brew install docker docker-buildx macOScontainers/formula/dockerd
 
 # Start services
 sudo brew services start containerd

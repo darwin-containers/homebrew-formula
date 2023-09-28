@@ -5,6 +5,10 @@ class Dockerd < Formula
 
   depends_on "go" => :build
 
+  depends_on "macOScontainers/formula/bindfs"
+  depends_on "macOScontainers/formula/containerd"
+  depends_on "macOScontainers/formula/rund"
+
   def install
     system "cp", "vendor.mod", "go.mod"
     system "cp", "vendor.sum", "go.sum"
