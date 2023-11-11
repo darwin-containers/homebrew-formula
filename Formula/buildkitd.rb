@@ -22,8 +22,10 @@ class Buildkitd < Formula
   service do
     run [bin/"buildkitd", "--config", etc/"buildkit/buildkitd.toml"]
     require_root true
-    keep_alive always: true
+    keep_alive true
     environment_variables PATH: std_service_path_env
+    log_path var/"log/buildkitd.log"
+    error_log_path var/"log/buildkitd.log"
   end
 
   def caveats

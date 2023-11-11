@@ -14,8 +14,10 @@ class Containerd < Formula
   service do
     run [bin/"containerd"]
     require_root true
-    keep_alive always: true
+    keep_alive true
     environment_variables PATH: std_service_path_env
+    log_path var/"log/containerd.log"
+    error_log_path var/"log/containerd.log"
   end
 
   def caveats

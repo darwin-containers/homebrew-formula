@@ -35,8 +35,10 @@ class Dockerd < Formula
   service do
     run [bin/"dockerd", "--config-file", etc/"docker/daemon.json"]
     require_root true
-    keep_alive always: true
+    keep_alive true
     environment_variables PATH: std_service_path_env
+    log_path var/"log/dockerd.log"
+    error_log_path var/"log/dockerd.log"
   end
 
   def caveats
