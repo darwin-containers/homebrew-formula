@@ -1,7 +1,7 @@
 class Containerd < Formula
-  version "0.0.1"
+  version "0.0.2"
   url "https://github.com/macOScontainers/containerd/archive/refs/tags/#{version}.zip"
-  sha256 "3e6139c3aad66f8b85d3f1fdd789ba1f8ba4ebe893da003a0131f20b1a7b7c79"
+  sha256 "1bc5ac84972d06bc1b309bee31701a4f8785331a97583573862dcb8bc1c32280"
 
   depends_on "go" => :build
 
