@@ -1,7 +1,7 @@
 class Buildkitd < Formula
-  version "0.0.2"
+  version "0.0.3"
   url "https://github.com/macOScontainers/buildkit/archive/refs/tags/#{version}.zip"
-  sha256 "30bca0971c406a4b189e24b12c760e71e497949fc209b04d7a4427fa147b5a12"
+  sha256 "a2c6195d0d3c43cec85acf981cbfe9199854b35f5fb83490dc7ed4d211f6715c"
 
   depends_on "go" => :build
 
