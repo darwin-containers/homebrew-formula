@@ -1,7 +1,7 @@
 class Dockerd < Formula
-  version "0.0.5"
+  version "0.0.4"
   url "https://github.com/macOScontainers/moby/archive/refs/tags/#{version}.zip"
-  sha256 "48a8c81a5c0a40501262c14b9b8a37a212210e9039f99bcc91297a9aa157d25f"
+  sha256 "900a36febe31c76f821a3c2df043e032623ec617294e82bac1ee4620a7233261"
 
   depends_on "go" => :build
 
