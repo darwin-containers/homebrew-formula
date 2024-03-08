@@ -41,9 +41,16 @@ echo <YOUR_ACCESS_TOKEN> | docker login ghcr.io -u <GITHUB_USERNAME> --password-
 
 Then, run your first macOS container:
 
+.On Apple Silicon
 [source,shell]
 ----
-docker run --rm -it ghcr.io/macoscontainers/macos-jail/ventura:latest echo "Hello from macOS container ^_^"
+sudo go run cmd/ctr/main.go run --rm -t --runtime "$(pwd)/../rund/bin/containerd-shim-rund-v1" ghcr.io/macoscontainers/macos-jail/ventura-arm64:latest my_container /bin/sh -c 'echo "Hello from macOS container ^_^"'
+----
+
+.On Intel
+[source,shell]
+----
+sudo go run cmd/ctr/main.go run --rm -t --runtime "$(pwd)/../rund/bin/containerd-shim-rund-v1" ghcr.io/macoscontainers/macos-jail/ventura-i386:latest my_container /bin/sh -c 'echo "Hello from macOS container ^_^"'
 ----
 
 == How does it work?
