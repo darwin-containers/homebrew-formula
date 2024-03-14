@@ -1,13 +1,13 @@
 class Dockerd < Formula
   version "0.0.8"
-  url "https://github.com/macOScontainers/moby/archive/refs/tags/#{version}.zip"
+  url "https://github.com/darwin-containers/moby/archive/refs/tags/#{version}.zip"
   sha256 "34f84760f9854b53ebbba7c490ac6226b82072b4c03f4bd5c1fff293b9c7b0f2"
 
   depends_on "go" => :build
 
-  depends_on "macOScontainers/formula/bindfs"
-  depends_on "macOScontainers/formula/containerd"
-  depends_on "macOScontainers/formula/rund"
+  depends_on "darwin-containers/formula/bindfs"
+  depends_on "darwin-containers/formula/containerd"
+  depends_on "darwin-containers/formula/rund"
 
   def install
     system "cp", "vendor.mod", "go.mod"
