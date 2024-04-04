@@ -24,11 +24,11 @@ end
 
 # TODO: This should be a cask so we can properly depend on macFUSE
 class Bindfs < Formula
-  version "1.17.6"
+  version "1.17.4"
   desc "FUSE file system for mounting to another location"
   homepage "https://bindfs.org/"
   url "https://bindfs.org/downloads/bindfs-#{version}.tar.gz"
-  sha256 "d3beb3cc69bb2b6802cc539588e921fea973ed6191b133f2024719311d1cc18b"
+  sha256 "6fd4af9ba2ec2bdb603ef8eea2a9d12db2e5fe9cbe52b8640b415734a59f3dcc"
   license "GPL-2.0-or-later"
 
   head do
