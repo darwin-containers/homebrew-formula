@@ -26,9 +26,16 @@ sudo brew services start containerd
 sudo brew services start dockerd
 
 # Set up BuildKit
-mkdir -p ~/.docker/cli-plugins
-ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
 ----
+
+Then, add `"cliPluginsExtraDirs"` to `~/.docker/config.json`, so Docker is able to find buildx plugin:
+```json
+{
+  "cliPluginsExtraDirs": [
+      "/opt/homebrew/lib/docker/cli-plugins"
+  ]
+}
+```
 
 == Usage
 
