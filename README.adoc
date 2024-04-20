@@ -24,8 +24,6 @@ brew install docker docker-buildx darwin-containers/formula/dockerd
 # Start services
 sudo brew services start containerd
 sudo brew services start dockerd
-
-# Set up BuildKit
 ----
 
 Then, add `"cliPluginsExtraDirs"` to `~/.docker/config.json`, so Docker is able to find buildx plugin:
