@@ -53,6 +53,7 @@ class Bindfs < Formula
         --disable-debug
         --disable-dependency-tracking
         --with-fuse2
+        --disable-macos-fs-link
         --prefix=#{prefix}
       ]
 
