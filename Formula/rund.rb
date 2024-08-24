@@ -1,7 +1,7 @@
 class Rund < Formula
-  version "0.0.8"
+  version "0.0.9"
   url "https://github.com/darwin-containers/rund/archive/refs/tags/#{version}.zip"
-  sha256 "05c5d7d7e5627c34b0344704c8a8695c8a728667a047f96f157482d8844c1131"
+  sha256 "151e6d459241dd4a9301eaa202dab8a115fdbaea61868e9cf78e11056f2e79d3"
 
   depends_on "go" => :build
 
