@@ -9,8 +9,8 @@ class Buildkitd < Formula
     system "go", "build", "-o", "bin/", "./cmd..."
 
     (buildpath/"buildkitd.toml").write <<~EOS
-      [worker.containerd]
-      runtime = "io.containerd.rund.v1"
+      [worker.containerd.runtime]
+      name = "io.containerd.rund.v1"
     EOS
 
     bin.install "bin/buildkitd" => "buildkitd"
