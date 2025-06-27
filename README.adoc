@@ -46,16 +46,9 @@ echo <YOUR_ACCESS_TOKEN> | docker login ghcr.io -u <GITHUB_USERNAME> --password-
 
 Then, run your first Darwin container:
 
-.On Apple Silicon
 [source,shell]
 ----
-sudo go run cmd/ctr/main.go run --rm -t --runtime "$(pwd)/../rund/bin/containerd-shim-rund-v1" ghcr.io/darwin-containers/darwin-jail/ventura-arm64:latest my_container /bin/sh -c 'echo "Hello from Darwin container ^_^"'
-----
-
-.On Intel
-[source,shell]
-----
-sudo go run cmd/ctr/main.go run --rm -t --runtime "$(pwd)/../rund/bin/containerd-shim-rund-v1" ghcr.io/darwin-containers/darwin-jail/ventura-i386:latest my_container /bin/sh -c 'echo "Hello from Darwin container ^_^"'
+sudo docker run --rm -it ghcr.io/darwin-containers/darwin-jail/ventura:latest echo "Hello from Darwin! ^_^"
 ----
 
 == How does it work?
