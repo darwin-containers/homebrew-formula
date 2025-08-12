@@ -1,7 +1,7 @@
 class Containerd < Formula
-  version "0.0.6"
+  version "0.0.11"
   url "https://github.com/darwin-containers/containerd/archive/refs/tags/#{version}.zip"
-  sha256 "c5f47ac6bccc17ddaa57bea9ecc3f6c0c5debb9be7e7bf3ea26e29024ebb5b5c"
+  sha256 "3b0530b3a84b0016270875d9b849364213b229046428ce19b4f892033cf6da83"
 
   depends_on "go" => :build
 
