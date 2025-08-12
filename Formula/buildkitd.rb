@@ -1,7 +1,7 @@
 class Buildkitd < Formula
-  version "0.0.7"
+  version "0.0.12"
   url "https://github.com/darwin-containers/buildkit/archive/refs/tags/#{version}.zip"
-  sha256 "daaa0668c56cf23141cbc431e38a229615d4b9fb739fd90cbce152aef7c95340"
+  sha256 "834e0c9cebe6147061883dbe53e217465a6ac04efe96606d492ab8656d1c2fb6"
 
   depends_on "go" => :build
 
