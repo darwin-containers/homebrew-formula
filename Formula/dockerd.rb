@@ -15,6 +15,9 @@ class Dockerd < Formula
     (buildpath/"daemon.json").write <<~EOS
       {
         "data-root": "/private/d/",
+        "features": {
+          "containerd-snapshotter": false
+        },
         "default-runtime": "io.containerd.rund.v1",
         "group": "staff",
         "runtimes": {
