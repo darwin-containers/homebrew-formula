@@ -10,8 +10,6 @@ class Dockerd < Formula
   depends_on "darwin-containers/formula/rund"
 
   def install
-    system "cp", "vendor.mod", "go.mod"
-    system "cp", "vendor.sum", "go.sum"
     system "go", "build", "-o", "bin/", "./cmd/dockerd"
 
     (buildpath/"daemon.json").write <<~EOS
