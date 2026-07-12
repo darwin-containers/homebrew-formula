@@ -1,7 +1,7 @@
 class Dockerd < Formula
-  version "0.0.12"
+  version "0.0.13"
   url "https://github.com/darwin-containers/moby/archive/refs/tags/#{version}.zip"
-  sha256 "0f222d8ecb4a5979d46f613c0e266f392d3155608a1878b0a38a162b70c9283d"
+  sha256 "ba99eaac046c4fd2821c074e2078d86f80e0c7a91497a182e4e054a6031fd455"
 
   depends_on "go" => :build
 
